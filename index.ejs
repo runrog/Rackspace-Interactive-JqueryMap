@@ -1,18 +1,222 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <% var env; var script = ''; var styles = ''%>
+    <% if (env === 'dev') { script = 'dist/js/app.min.js'; styles = 'dist/css/main.min.css'; %>
+    <% } else { script = 'js/app.min.js'; styles = 'css/main.min.css'; }%>
     <meta charset="utf-8">
-    <title>Node + EJS Biolerplate</title>
-    <link rel="stylesheet" type="text/css" href="dist/css/main.min.css">
-    <script src="dist/js/app.min.js" charset="utf-8"></script>
+    <title>Rackspace Interactive Map</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="<%- styles %>">
+    <script src="<%- script %>" charset="utf-8"></script>
   </head>
   <body>
       <% include partials/header %>
-      <p>Node JS</p>
-      <p>EJS</p>
-      <p>SASS</p>
-      <p>Gulp</p>
-      <p>BrowserSync</p>
-      <p>ES6/Babel</p>
+      <div class="rsMap-container"></div>
+      <script type="text/javascript">
+        const config = {
+          circles: [
+            {
+              type: 'hub',
+              items: 2,
+              tipTitle: 'This is a Title',
+              tipBody: 'Edison bulb snackwave truffaut XOXO, man braid heirloom hashtag skateboard semiotics intelligentsia seitan put a bird.',
+              tipFooter: 'footer link',
+              top: '130px',
+              left: '130px',
+            },
+            {
+              type: 'hub',
+              items: 2,
+              tipTitle: 'This is a Title',
+              tipBody: 'Edison bulb snackwave truffaut XOXO, man braid heirloom hashtag skateboard semiotics intelligentsia seitan put a bird.',
+              tipFooter: 'footer link',
+              top: '155px',
+              left: '135px',
+            },
+            {
+              type: 'office',
+              items: 1,
+              tipTitle: 'Mexico Office',
+              tipBody: 'Edison bulb snackwave truffaut XOXO, man braid heirloom hashtag skateboard semiotics intelligentsia seitan put a bird.',
+              tipFooter: '',
+              top: '220px',
+              left: '185px',
+            },
+            {
+              type: 'dataCenter',
+              items: 1,
+              tipTitle: 'DFW DC',
+              tipBody: 'Edison bulb snackwave truffaut XOXO, man braid heirloom hashtag skateboard semiotics intelligentsia seitan put a bird.',
+              tipFooter: '',
+              top: '180px',
+              left: '190px',
+            },
+            {
+              type: 'office',
+              items: 2,
+              tipTitle: 'TX Offices',
+              tipBody: 'Edison bulb snackwave truffaut XOXO, man braid heirloom hashtag skateboard semiotics intelligentsia seitan put a bird.',
+              tipFooter: '',
+              top: '155px',
+              left: '200px',
+            },
+            {
+              type: 'hub',
+              items: 2,
+              tipTitle: '2 Hubs',
+              tipBody: 'Edison bulb snackwave truffaut XOXO, man braid heirloom hashtag skateboard semiotics intelligentsia seitan put a bird.',
+              tipFooter: '',
+              top: '177px',
+              left: '218px',
+            },
+            {
+              type: 'dataCenter',
+              items: 1,
+              tipTitle: 'ORD DC',
+              tipBody: 'Edison bulb snackwave truffaut XOXO, man braid heirloom hashtag skateboard semiotics intelligentsia seitan put a bird.',
+              tipFooter: '',
+              top: '130px',
+              left: '240px',
+            },
+            {
+              type: 'hub',
+              items: 4,
+              tipTitle: '4 Hubs',
+              tipBody: 'Edison bulb snackwave truffaut XOXO, man braid heirloom hashtag skateboard semiotics intelligentsia seitan put a bird.',
+              tipFooter: '',
+              top: '150px',
+              left: '275px',
+            },
+            {
+              type: 'dataCenter',
+              items: 1,
+              tipTitle: 'IAD DC',
+              tipBody: 'Edison bulb snackwave truffaut XOXO, man braid heirloom hashtag skateboard semiotics intelligentsia seitan put a bird.',
+              tipFooter: '',
+              top: '175px',
+              left: '285px',
+            },
+            {
+              type: 'office',
+              items: 1,
+              tipTitle: 'RS Office',
+              tipBody: 'Edison bulb snackwave truffaut XOXO, man braid heirloom hashtag skateboard semiotics intelligentsia seitan put a bird.',
+              tipFooter: '',
+              top: '145px',
+              left: '300px',
+            },
+            {
+              type: 'hub',
+              items: 2,
+              tipTitle: 'Canada Hubs',
+              tipBody: 'Edison bulb snackwave truffaut XOXO, man braid heirloom hashtag skateboard semiotics intelligentsia seitan put a bird.',
+              tipFooter: '',
+              top: '100px',
+              left: '310px',
+            },
+            {
+              type: 'dataCenter',
+              items: 1,
+              tipTitle: 'LON DC',
+              tipBody: 'Edison bulb snackwave truffaut XOXO, man braid heirloom hashtag skateboard semiotics intelligentsia seitan put a bird.',
+              tipFooter: '',
+              top: '65px',
+              left: '540px',
+            },
+            {
+              type: 'office',
+              items: 1,
+              tipTitle: 'LON Office',
+              tipBody: 'Edison bulb snackwave truffaut XOXO, man braid heirloom hashtag skateboard semiotics intelligentsia seitan put a bird.',
+              tipFooter: '',
+              top: '90px',
+              left: '525px',
+            },
+            {
+              type: 'hub',
+              items: 2,
+              tipTitle: 'British Hubs',
+              tipBody: 'Edison bulb snackwave truffaut XOXO, man braid heirloom hashtag skateboard semiotics intelligentsia seitan put a bird.',
+              tipFooter: '',
+              top: '85px',
+              left: '555px',
+            },
+            {
+              type: 'dataCenter',
+              items: 1,
+              tipTitle: 'Le DC',
+              tipBody: 'Edison bulb snackwave truffaut XOXO, man braid heirloom hashtag skateboard semiotics intelligentsia seitan put a bird.',
+              tipFooter: '',
+              top: '120px',
+              left: '565px',
+            },
+            {
+              type: 'office',
+              items: 3,
+              tipTitle: 'Eurotrip',
+              tipBody: 'Edison bulb snackwave truffaut XOXO, man braid heirloom hashtag skateboard semiotics intelligentsia seitan put a bird.',
+              tipFooter: '',
+              top: '145px',
+              left: '555px',
+            },
+            {
+              type: 'hub',
+              items: 9,
+              tipTitle: 'Eurotrip Hubs',
+              tipBody: 'Edison bulb snackwave truffaut XOXO, man braid heirloom hashtag skateboard semiotics intelligentsia seitan put a bird.',
+              tipFooter: '',
+              top: '140px',
+              left: '585px',
+            },
+            {
+              type: 'office',
+              items: 1,
+              tipTitle: 'Singapore',
+              tipBody: 'Edison bulb snackwave truffaut XOXO, man braid heirloom hashtag skateboard semiotics intelligentsia seitan put a bird.',
+              tipFooter: '',
+              top: '295px',
+              left: '895px',
+            },
+            {
+              type: 'office',
+              items: 1,
+              tipTitle: 'CN Office',
+              tipBody: 'Edison bulb snackwave truffaut XOXO, man braid heirloom hashtag skateboard semiotics intelligentsia seitan put a bird.',
+              tipFooter: '',
+              top: '210px',
+              left: '935px',
+            },
+            {
+              type: 'dataCenter',
+              items: 1,
+              tipTitle: 'CN DC',
+              tipBody: 'Edison bulb snackwave truffaut XOXO, man braid heirloom hashtag skateboard semiotics intelligentsia seitan put a bird.',
+              tipFooter: '',
+              top: '185px',
+              left: '955px',
+            },
+            {
+              type: 'office',
+              items: 1,
+              tipTitle: 'Crikeeey',
+              tipBody: 'Edison bulb snackwave truffaut XOXO, man braid heirloom hashtag skateboard semiotics intelligentsia seitan put a bird.',
+              tipFooter: '',
+              top: '420px',
+              left: '1045px',
+            },
+            {
+              type: 'dataCenter',
+              items: 1,
+              tipTitle: 'DC Down Unda',
+              tipBody: 'Edison bulb snackwave truffaut XOXO, man braid heirloom hashtag skateboard semiotics intelligentsia seitan put a bird.',
+              tipFooter: '',
+              top: '400px',
+              left: '1065px',
+            },
+          ],
+        }
+        rsInteractiveMap.init(config, $('.rsMap-container'));
+      </script>
   </body>
 </html>

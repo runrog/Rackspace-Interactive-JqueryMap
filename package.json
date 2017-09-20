@@ -1,7 +1,7 @@
 {
-  "name": "lean-starter",
+  "name": "Rackspace-Interactive-Map",
   "version": "1.0.0",
-  "description": "Lean front end biolerplate. Using EJS, node, gulp, eslint etc.",
+  "description": "Interactive map for Rackspace global footprint.",
   "main": "server.js",
   "scripts": {
     "start": "gulp",
@@ -24,6 +24,7 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.1",
+    "gulp-ejs": "^3.0.1",
     "gulp-minify": "^1.0.0",
     "gulp-nodemon": "^2.2.1",
     "gulp-rename": "^1.2.2",

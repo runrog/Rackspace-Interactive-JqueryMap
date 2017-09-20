@@ -2,10 +2,138 @@
 $baseColor: #eee;
 $bodyFont: 'Roboto', sans-serif;
 
+$circleRadius: 35px;
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: $baseColor !important;
   color: #596167;
   font-family: $bodyFont;
   padding-top: 50px;
   text-align: center;
+}
+
+@mixin make-map-circle($class, $bgColor, $borderColor) {
+  #{$class} {
+    background-color: $bgColor;
+    border: 2px solid $borderColor;
+    border-radius: 50%;
+    color: white;
+    height: $circleRadius;
+    padding-top: 6px;
+    text-align: center;
+    width: $circleRadius;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+      transition-duration: .1s;
+    }
+  }
+}
+
+@mixin make-legend-circle($class, $bgColor, $borderColor) {
+  #{$class} {
+    background-color: $bgColor;
+    border: 2px solid $borderColor;
+    border-radius: 50%;
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+  }
+}
+
+.rsMap-legend {
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.rsMap-legend-label {
+  margin-right: 35px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+@include make-legend-circle('.rsMap-legend-dc', #b16b72, #9d0000);
+@include make-legend-circle('.rsMap-legend-office', #8a8b8e, #424344);
+@include make-legend-circle('.rsMap-legend-hub', #74bec1, #00b4c3);
+
+.rsMap-container {
+  background-image: url('https://0fb555c65f288d09a992-a2085a232a1d2a458a641f48ff12bf08.ssl.cf2.rackcdn.com/rs-interactive-map/lean-map-ids.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 545px;
+  min-height: 20px;
+  margin: 0 auto;
+  position: relative;
+  top: 35px;
+  width: 1230px;
+}
+
+.rsMap-dataCenter {
+  position: absolute;
+  z-index: 3;
+}
+
+.rsMap-hub {
+  position: absolute;
+  z-index: 2;
+}
+
+.rsMap-office {
+  position: absolute;
+  z-index: 1;
+}
+
+.rsMap-inner {
+  position: relative;
+}
+
+@include make-map-circle('.rsMap-dataCenter-circle', #b16b72, #9d0000);
+@include make-map-circle('.rsMap-office-circle', #8a8b8e, #424344);
+@include make-map-circle('.rsMap-hub-circle', #74bec1, #00b4c3);
+
+.rsMap-toolTip {
+  background-color: white;
+  display: none;
+  min-height: 10px;
+  padding: 10px 15px;
+  position: absolute;
+  text-align: left;
+  width: 350px;
+}
+
+.rsMap-toolTip-header {
+  color: #c40022;
+  font-size: 12pt;
+}
+
+.rsMap-toolTip-body {
+  font-size: 11pt;
+}
+
+.rsMap-toolTip-footer {
+  font-size: 10pt;
+}
+
+.rsMap-toolTip-arrow {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid white;
+  bottom: -10px;
+  height: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  width: 0;
+}
+
+.rsMap-active-circle {
+  z-index: 5;
 }
