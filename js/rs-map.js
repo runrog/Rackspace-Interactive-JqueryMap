@@ -2,7 +2,7 @@
  The Rackspace Interactive Map plugin can be built with an array of map circles.
  See below for parameter options passed through the config.
  * @param {string} type - Current options for this property are 'dataCenter', 'office', 'hub'.
- * @param {number} items - Th
+ * @param {number} items - The number of items in a bubble
  * @param {string} tipTitle - accepts text and HTML
  * @param {string} tipBody - accepts text and HTML
  * @param {string} tipFooter - accepts text and HTML
