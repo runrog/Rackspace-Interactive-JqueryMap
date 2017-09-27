@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 $baseColor: #eee;
 $bodyFont: 'Roboto', sans-serif;
-
+$rackspace-red: #c40022;
 $circleRadius: 35px;
 
 * {
@@ -109,7 +109,7 @@ body {
 }
 
 .rsMap-toolTip-header {
-  color: #c40022;
+  color: $rackspace-red;
   font-size: 12pt;
 }
 
@@ -119,6 +119,15 @@ body {
 
 .rsMap-toolTip-footer {
   font-size: 10pt;
+}
+
+.rsMap-toolTip-footerLink {
+  color: $rackspace-red;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .rsMap-toolTip-arrow {
@@ -136,4 +145,12 @@ body {
 
 .rsMap-active-circle {
   z-index: 5;
+}
+
+.rsMap-bulletList {
+  padding: 0 20px;
+
+  li {
+    margin-bottom: 3px;
+  }
 }

@@ -47,7 +47,10 @@ gulp.task('build-js', jsTask);
 gulp.task('build-dist', () => {
   gulp.src('index.ejs')
    .pipe(ejs({}, {}, { ext: '.html' }))
-   .pipe(gulp.dest('./dist'));
+   .pipe(gulp.dest('./dist'))
+   .on('end', () => {
+     console.log('Successfully Built ejs');
+   });
   // run sass/js tasks
   sassTask();
   jsTask();
