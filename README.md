@@ -3,7 +3,7 @@ This is a WIP project that creates a new svg map with custom bubbles/tooltips cr
 
 ![alt text](rs-map-demo.png "")
 
-[See Demo](https://0fb555c65f288d09a992-a2085a232a1d2a458a641f48ff12bf08.ssl.cf2.rackcdn.com/rs-jquery-map/index.html)
+[See Live Demo](http://b908c4040f36e92b6c1d-5868806ce06e7becdec4f0e74f1f735c.r92.cf1.rackcdn.com/static/index.html)
 
 ### Install
 ```

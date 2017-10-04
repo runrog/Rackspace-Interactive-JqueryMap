@@ -121,15 +121,6 @@ body {
   font-size: 10pt;
 }
 
-.rsMap-toolTip-footerLink {
-  color: $rackspace-red;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
 .rsMap-toolTip-arrow {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
@@ -155,9 +146,25 @@ body {
   }
 }
 
+.rsMap-toolTip-footerLink {
+  color: $rackspace-red;
+  position: relative;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .rsMap-speedTest-icon {
   font-size: 2em;
   margin-right: 8px;
   position: relative;
   top: 1px;
+}
+
+.drzMap-imgIcon {
+  margin-right: 8px;
+  position: relative;
+  width: 9%;
 }
