@@ -56,7 +56,7 @@ left: // String value. This is the px value from the left of the map you would l
 ### Gulp Tasks
 Gulp tasks will run automatically but to manually run them:
 
-Build for dist
+Build for dist. This will push directly to rackspace cloudfiles as well for static rendering.
 ```
 gulp build-dist
 ```
