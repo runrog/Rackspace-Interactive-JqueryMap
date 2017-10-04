@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <title>Rackspace Interactive Map</title>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="<%- styles %>">
     <script src="<%- script %>" charset="utf-8"></script>
   </head>
@@ -14,6 +15,7 @@
       <% include partials/header %>
       <div class="rsMap-container"></div>
       <script type="text/javascript">
+      const speedIcon = '<i class="fa fa-tachometer rsMap-speedTest-icon" aria-hidden="true"></i>';
         const config = {
           circles: [
             {
@@ -73,7 +75,7 @@
                   <li>Critical Infrastructure Rating N+2</li>
                 </ul>
               `,
-              tipFooter: '<a href="#" class="rsMap-toolTip-footerLink" target="_blank">Speed Test Link</a>',
+              tipFooter: `${speedIcon}<a href="#" class="rsMap-toolTip-footerLink" target="_blank">Speed Test Link</a>`,
               top: '180px',
               left: '190px',
             },
@@ -145,7 +147,7 @@
                   <li>Critical Infrastructure Rating N+2</li>
                 </ul>
               `,
-              tipFooter: '<a href="#" class="rsMap-toolTip-footerLink" target="_blank">Speed Test Link</a>',
+              tipFooter: `${speedIcon}<a href="#" class="rsMap-toolTip-footerLink" target="_blank">Speed Test Link</a>`,
               top: '130px',
               left: '240px',
             },
@@ -180,7 +182,7 @@
                   <li>Critical Infrastructure Rating N+2</li>
                 </ul>
               `,
-              tipFooter: '<a href="#" class="rsMap-toolTip-footerLink" target="_blank">Speed Test Link</a>',
+              tipFooter: `${speedIcon}<a href="#" class="rsMap-toolTip-footerLink" target="_blank">Speed Test Link</a>`,
               top: '175px',
               left: '285px',
             },
@@ -230,7 +232,7 @@
                   <li>Critical Infrastructure Rating N+2</li>
                 </ul>
               `,
-              tipFooter: '<a href="#" class="rsMap-toolTip-footerLink" target="_blank">Speed Test Link</a>',
+              tipFooter: `${speedIcon}<a href="#" class="rsMap-toolTip-footerLink" target="_blank">Speed Test Link</a>`,
               top: '65px',
               left: '540px',
             },
@@ -279,7 +281,7 @@
                   <li>Critical Infrastructure Rating N+1</li>
                 </ul>
               `,
-              tipFooter: '<a href="#" class="rsMap-toolTip-footerLink" target="_blank">Speed Test Link</a>',
+              tipFooter: `${speedIcon}<a href="#" class="rsMap-toolTip-footerLink" target="_blank">Speed Test Link</a>`,
               top: '120px',
               left: '565px',
             },
@@ -374,7 +376,7 @@
                   <li>Critical Infrastructure Rating N+2</li>
                 </ul>
               `,
-              tipFooter: '<a href="#" class="rsMap-toolTip-footerLink" target="_blank">Speed Test Link</a>',
+              tipFooter: `${speedIcon}<a href="#" class="rsMap-toolTip-footerLink" target="_blank">Speed Test Link</a>`,
               top: '185px',
               left: '955px',
             },
@@ -404,7 +406,7 @@
                   <li>Critical Infrastructure Rating N+2</li>
                 </ul>
               `,
-              tipFooter: '<a href="#" class="rsMap-toolTip-footerLink" target="_blank">Speed Test Link</a>',
+              tipFooter: `${speedIcon}<a href="#" class="rsMap-toolTip-footerLink" target="_blank">Speed Test Link</a>`,
               top: '400px',
               left: '1065px',
             },
